@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Get Directions</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href="/css/default.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#sub").click(function(){
+          $("#blurb").fadeOut();
+        });
+      });
+    </script>
+  <script>
+  $(document).ready(function(){
+    $( ".draggable" ).draggable();
+  });
+  </script>
+    <style>
+      #directions-panel {
+        height: 100%;
+        float: right;
+        width: 415px;
+        overflow: auto;
+        background: white;
+      }
+      #blurb{
+        position: absolute;
+        top: 75px;
+        right: 100px;
+        z-index: 1000;
+        color: #737373;
+        font-family: 'Open Sans', sans-serif; font-weight: 400;
+        text-align: center;
+      }
+
+      #map-canvas {
+        margin-right: 400px;
+      }
+      .draggable{ cursor: move; margin-top: 15px;}
+      #control {
+        background: #fff;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        display: none;
+      }
+
+      @media print {
+        #map-canvas {
+          height: 500px;
+          margin: 0;
+          box-shadow: 0px 0px 15px -2px #666666;
+        }
+
+        #directions-panel {
+          float: none;
+          width: auto;
+          font-family: 'Antic Didone', serif;
+        }
+      }
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Nixie+One|Marcellus+SC|Codystar|Economica|Poiret+One|Anaheim|Sail|Petit+Formal+Script|Molle:400italic|Contrail+One|Patrick+Hand+SC|Antic+Didone|Russo+One|Exo|Unica+One|Keania+One|Share+Tech+Mono|Amatic+SC|Berkshire+Swash|Julius+Sans+One|Arizonia|Cuprum|Playball|Open+Sans+Condensed:300|Quantico|Cinzel|Orbitron|Raleway+Dots|Audiowide|Jura|Almendra+SC|Cinzel+Decorative' rel='stylesheet' type='text/css'>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="/js/map_functions.js"></script>
+  </head>
+  <body>
+    <div class="draggable" id="panel" title="I'm draggable!">
+    <b>Enter Start Address: </b>
+    <input id="start" type="text" name="start" maxlength="50" size="30">
+    <input id="sub" type="submit" value="Submit" onclick="calcRoute();">
+    </div>
+    <div id="directions-panel"></div>
+    <div id="map-canvas"></div>
+    <div id="blurb"><img src="/images/mmsLogo2.png" align="center" /><h2>Directions to MMS</h2><p>Enter Address on the left.</p></div>
+  </body>
+</html>
