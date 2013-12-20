@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map-canvas, #map_canvas {
+  height: 100%;
+}
+
+@media print {
+  html, body {
+    height: auto;
+  }
+
+  #map-canvas, #map_canvas {
+    height: 650px;
+  }
+}
+
+#panel {
+  position: absolute;
+  font-family: 'Marcellus SC', serif;
+  top: 5px;
+  left: 50%;
+  margin-left: -275px;
+  z-index: 5;
+  background-color: #fff;
+  height: 55px;
+  width: 300px;
+  padding-left: 25px;
+  border: 1px solid white;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -moz-box-shadow: 0 0 10px 5px #b8b8bb;
+  -webkit-box-shadow: 0 0 10px 5px #b8b8bb;
+  color: white;
+  background: -moz-linear-gradient(top, rgb(198, 198, 198) 0%, rgb(117, 115, 115) 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(198, 198, 198,1)), color-stop(100%,rgba(117, 115, 115,1)));
+  background: -webkit-linear-gradient(top, rgba(198, 198, 198,1) 0%,rgba(117, 115, 115,1) 100%);
+  background: -o-linear-gradient(top, rgba(198, 198, 198,1) 0%,rgba(117, 115, 115,1) 100%);
+  background: -ms-linear-gradient(top, rgba(198, 198, 198,1) 0%,rgba(117, 115, 115,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c1c1c1',GradientType=0 );
+  background: linear-gradient(top, rgba(198, 198, 198,1) 0%,rgba(117, 115, 115,1) 100%);
+}
+#pnael h3{text-align: center;}
